@@ -862,7 +862,61 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   .wrap { width: calc(100% - 32px); }
   .nav { display: none; }
   .topbar__inner { height: 66px; }
-  .hero { padding-top: 40px; }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+  }
+  .hero__copy { display: contents; }
+  .hero .eyebrow { order: 1; margin-bottom: 0; }
+  .hero h1 { order: 2; margin-bottom: 0; }
+  .hero .lead { order: 3; margin-bottom: 0; }
+  .hero .donate { order: 4; }
+  .hero .hero__cta { order: 5; }
+  .hero .hero__points { order: 6; margin-top: 0; }
+
+  /* compact donation card: QR stays in the first screen */
+  .donate {
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+    align-items: center;
+    gap: 2px 16px;
+    width: 100%;
+    max-width: none;
+    margin: 10px 0 0;
+    padding: 16px;
+    text-align: left;
+  }
+  .donate::before { inset: 6px; }
+  .donate__badge { top: -12px; left: 14px; transform: none; }
+  .donate__title {
+    grid-column: 2;
+    margin: 0;
+    font-size: 16.5px;
+    line-height: 1.25;
+    text-align: left;
+  }
+  .donate__text {
+    grid-column: 2;
+    margin: 2px 0 4px;
+    max-width: none;
+    font-size: 11.5px;
+    line-height: 1.45;
+    text-align: left;
+  }
+  .donate .qr {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: zoom-in;
+  }
+  .donate__bank { grid-column: 2; margin: 0; font-size: 12.5px; }
+  .donate__note { display: none; }
+
   .grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stat--wide { grid-column: span 2; }

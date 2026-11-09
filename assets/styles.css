@@ -1062,3 +1062,47 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   }
   .card--wide .card__body { padding: 20px; }
 }
+
+/* выравнивание широкой карточки: картинка заполняет левую колонку */
+.card--wide .card__shot {
+  aspect-ratio: auto;
+  min-height: 0;
+  height: auto;
+  position: relative;
+}
+.card--wide .card__shot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* карточка-ссылка на оглавление */
+.card--cta {
+  background:
+    radial-gradient(420px 220px at 100% 0%, rgba(94, 234, 212, .16), transparent 70%),
+    linear-gradient(160deg, var(--panel-2), var(--panel));
+}
+.card--cta .cta-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 26px 24px;
+}
+.card--cta h3 {
+  margin: 8px 0 8px;
+  font-size: 27px;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+}
+.card--cta p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.card--cta .btn { align-self: flex-start; margin-top: auto; }
+
+.card--cta .cta-card { justify-content: center; }
+.card--cta .btn { margin-top: 0; }

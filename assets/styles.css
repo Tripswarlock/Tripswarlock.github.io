@@ -1036,3 +1036,29 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 @media (max-width: 760px) {
   .donate__badge { left: auto; right: 14px; }
 }
+
+/* широкая карточка (игры) */
+.card--wide {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+}
+.card--wide .card__shot {
+  aspect-ratio: auto;
+  min-height: 100%;
+  border-bottom: 0;
+  border-right: 1px solid var(--line);
+}
+.card--wide .card__shot img { height: 100%; }
+.card--wide .card__body { padding: 26px; }
+
+@media (max-width: 760px) {
+  .card--wide { grid-column: auto; display: flex; }
+  .card--wide .card__shot {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .card--wide .card__body { padding: 20px; }
+}

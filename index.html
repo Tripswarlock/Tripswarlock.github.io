@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Инструменты электронной подписи — проекты Tripswarlock</title>
+<meta name="description" content="Штамп, проверка и подпись PDF через КриптоПро CSP: настольное приложение, браузерная утилита и массовое подписание. Всё локально, без облака.">
+<meta property="og:title" content="Инструменты электронной подписи">
+<meta property="og:description" content="Штамп, проверка и подпись PDF через КриптоПро CSP. Настольные и браузерные инструменты, которые работают локально.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070b14">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+  (function () {
+    document.documentElement.classList.add('js');
+    try {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#projects">Перейти к проектам</a>
+
+<div class="bg" aria-hidden="true">
+  <div class="bg__glow bg__glow--1"></div>
+  <div class="bg__glow bg__glow--2"></div>
+  <div class="bg__grid"></div>
+</div>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="brand" href="#top" aria-label="На главную">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <path d="M16 3.5 27 8v8.2c0 6.2-4.6 10.6-11 12.3C9.6 26.8 5 22.4 5 16.2V8l11-4.5Z" stroke="currentColor" stroke-width="2"/>
+          <path d="m11 16.4 3.4 3.4 6.8-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">ПОДПИСЬ</span>
+        <span class="brand__sub">инструменты для PDF</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#projects">Проекты</a>
+      <a href="#repositories">Репозитории</a>
+      <a href="#principles">Принципы</a>
+    </nav>
+
+    <div class="topbar__actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Переключить тему" title="Светлая / тёмная тема">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.4A8.2 8.2 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="btn btn--ghost btn--sm" href="https://github.com/Tripswarlock" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ======================= HERO ======================= -->
+  <section class="hero wrap">
+    <div class="hero__copy">
+      <p class="eyebrow">
+        <span class="eyebrow__dot"></span>
+        Электронная подпись · PDF · КриптоПро
+      </p>
+      <h1>Подпись, штамп<br>и проверка <span class="accent">без облака.</span></h1>
+      <p class="lead">
+        Настольные и браузерные инструменты для работы с электронной подписью.
+        Штамп «Документ подписан ЭП», разбор CMS/PAdES, сверка хэша по ГОСТ
+        и пакетная обработка — прямо на вашей машине.
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#projects">
+          Смотреть проекты
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5.5-5.5L19 12l-5.5 5.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--soft" href="#donate">Поддержать проект</a>
+      </div>
+
+      <ul class="hero__points">
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Windows и Linux</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Без телеметрии</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Открытый код</li>
+      </ul>
+    </div>
+
+    <!-- Donation QR -->
+    <aside class="donate" id="donate" aria-labelledby="donate-title">
+      <div class="donate__badge">
+        <span class="donate__pulse" aria-hidden="true"></span>
+        Донат
+      </div>
+      <h2 class="donate__title" id="donate-title">Поддержать разработку</h2>
+      <p class="donate__text">Сборки под Linux, тесты с реальными сертификатами и новые форматы подписи.</p>
+
+      <button class="qr" type="button" id="qrOpen" aria-label="Открыть QR-код крупнее">
+        <img src="assets/donate-qr.png" alt="QR-код для доната через Ozon Банк" width="600" height="600">
+        <span class="qr__hint">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          Увеличить
+        </span>
+      </button>
+
+      <p class="donate__bank"><span class="donate__bank-dot"></span>Ozon Банк</p>
+      <p class="donate__note">Наведите камеру телефона на QR-код — откроется перевод.</p>
+    </aside>
+  </section>
+
+  <!-- ======================= STATS ======================= -->
+  <section class="stats wrap" aria-label="Коротко о проектах">
+    <div class="stat"><b>4</b><span>репозитория</span></div>
+    <div class="stat"><b>3</b><span>приложения</span></div>
+    <div class="stat"><b>2</b><span>платформы</span></div>
+    <div class="stat"><b>0</b><span>сетевых запросов</span></div>
+    <div class="stat stat--wide"><b>100%</b><span>обработки локально</span></div>
+  </section>
+
+  <!-- ======================= PROJECTS ======================= -->
+  <section class="section wrap" id="projects">
+    <header class="section__head">
+      <div>
+        <p class="kicker">Проекты</p>
+        <h2>Один стек — три сценария</h2>
+      </div>
+      <div class="filters" role="group" aria-label="Фильтр проектов">
+        <button class="filter is-active" type="button" data-filter="all">Все</button>
+        <button class="filter" type="button" data-filter="desktop">Десктоп</button>
+        <button class="filter" type="button" data-filter="web">Веб</button>
+        <button class="filter" type="button" data-filter="script">Скрипты</button>
+      </div>
+    </header>
+
+    <div class="grid" id="projectGrid">
+
+      <!-- Stamp EP -->
+      <article class="card reveal" data-cat="desktop">
+        <div class="card__shot">
+          <img src="assets/stamp-ep.png" alt="Интерфейс приложения «Штамп ЭП»: PDF и панель штампа" loading="lazy" width="1380" height="860">
+          <div class="card__badges">
+            <span class="pill pill--solid">Десктоп</span>
+            <span class="pill pill--lock">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8"/></svg>
+              private
+            </span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / stamp-ep</div>
+          <h3>Штамп ЭП</h3>
+          <p>Нативное приложение на Qt для Windows и Linux: визуальный штамп, проверка CMS/PAdES и подпись PDF сертификатом CryptoPro CSP.</p>
+          <ul class="features">
+            <li>Проверка CMS, PAdES и покрытия ByteRange</li>
+            <li>Рукописный слой и пакетный экспорт в ZIP</li>
+            <li>MSI, NSIS, portable и пакеты .deb / .rpm</li>
+          </ul>
+          <div class="tags"><span>C++</span><span>Qt 6</span><span>CryptoPro</span><span>MIT</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/stamp-ep-sa" target="_blank" rel="noopener">Репозиторий</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/Tripswarlock/stamp-ep-sa/releases" target="_blank" rel="noopener">Релизы</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PDF sign stamp (web) -->
+      <article class="card reveal" data-cat="web">
+        <div class="card__shot">
+          <img src="assets/pdf-sign-stamp.jpg" alt="Веб-утилита «Штамп ЭП»: страница PDF со штампом электронной подписи" loading="lazy" width="1600" height="1111">
+          <div class="card__badges">
+            <span class="pill pill--solid">Веб</span>
+            <span class="pill pill--lock">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8"/></svg>
+              private
+            </span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / pdf-sign-stamp</div>
+          <h3>Штамп ЭП — веб</h3>
+          <p>Браузерная утилита: накладывает штамп «Документ подписан электронной подписью» на PDF, разбирает отсоединённую подпись и сверяет хэш по ГОСТ Р 34.11-2012.</p>
+          <ul class="features">
+            <li>PDF и .sig не уходят на сервер</li>
+            <li>Массовая загрузка пар и экспорт одним ZIP</li>
+            <li>Сертификат с токена через плагин КриптоПро</li>
+          </ul>
+          <div class="tags"><span>JavaScript</span><span>Canvas</span><span>pdf.js</span><span>GPL-3.0</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/pdf-sign-stamp" target="_blank" rel="noopener">Репозиторий</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sign Everything -->
+      <article class="card reveal" data-cat="script">
+        <div class="card__shot card__shot--code" aria-hidden="true">
+          <div class="code">
+            <div class="code__bar"><i></i><i></i><i></i><span>sign-everything</span></div>
+<pre><code><span class="c-com"># массовое подписание через cryptcp</span>
+<span class="c-kw">for</span> file <span class="c-kw">in</span> walk(folder):
+    <span class="c-kw">if</span> is_signed(file): <span class="c-kw">continue</span>
+    cryptcp(<span class="c-str">"-s"</span>, cert, file)
+    progress += <span class="c-num">1</span></code></pre>
+          </div>
+          <div class="card__badges">
+            <span class="pill pill--solid">Скрипты</span>
+            <span class="pill pill--open">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              public
+            </span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / sign-everything</div>
+          <h3>Sign Everything</h3>
+          <p>Небольшое GUI-приложение на Python/PyQt5 для массового подписания файлов утилитой cryptcp: перетащите папку, выберите сертификат и запустите.</p>
+          <ul class="features">
+            <li>Рекурсивный обход вложенных папок</li>
+            <li>Пропускает уже подписанные файлы</li>
+            <li>Отсоединённая подпись .sig для любых форматов</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>PyQt5</span><span>cryptcp</span><span>MIT</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/sign-everything" target="_blank" rel="noopener">Репозиторий</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ======================= REPOSITORIES ======================= -->
+  <section class="section wrap" id="repositories">
+    <header class="section__head">
+      <div>
+        <p class="kicker">Каталог</p>
+        <h2>Все репозитории с подписью</h2>
+      </div>
+      <p class="section__note">Часть репозиториев приватна — доступ по запросу владельцу.</p>
+    </header>
+
+    <div class="repo-table" role="table" aria-label="Репозитории, связанные с электронной подписью">
+      <div class="repo-table__head" role="row">
+        <span role="columnheader">Репозиторий</span>
+        <span role="columnheader">Что внутри</span>
+        <span role="columnheader">Стек</span>
+        <span role="columnheader">Лицензия</span>
+        <span role="columnheader">Доступ</span>
+      </div>
+
+      <a class="repo-row" role="row" href="https://github.com/Tripswarlock/stamp-ep-sa" target="_blank" rel="noopener">
+        <span class="repo-row__name" role="cell"><b>stamp-ep-sa</b><small>Штамп ЭП</small></span>
+        <span class="repo-row__desc" role="cell">Основной код нативного приложения: штамп, проверка и подпись PDF</span>
+        <span class="repo-row__stack" role="cell">C++ · Qt 6</span>
+        <span class="repo-row__lic" role="cell">MIT</span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
+      </a>
+
+      <a class="repo-row" role="row" href="https://github.com/Tripswarlock/stamp-ep" target="_blank" rel="noopener">
+        <span class="repo-row__name" role="cell"><b>stamp-ep</b><small>зеркало</small></span>
+        <span class="repo-row__desc" role="cell">Зарезервированное имя и зеркало релизов Stamp EP</span>
+        <span class="repo-row__stack" role="cell">C++ · Qt 6</span>
+        <span class="repo-row__lic" role="cell">MIT</span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
+      </a>
+
+      <a class="repo-row" role="row" href="https://github.com/Tripswarlock/pdf-sign-stamp" target="_blank" rel="noopener">
+        <span class="repo-row__name" role="cell"><b>pdf-sign-stamp</b><small>Штамп ЭП — веб</small></span>
+        <span class="repo-row__desc" role="cell">Браузерная утилита: штамп, разбор CMS, проверка хэша</span>
+        <span class="repo-row__stack" role="cell">JavaScript</span>
+        <span class="repo-row__lic" role="cell">GPL-3.0</span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
+      </a>
+
+      <a class="repo-row" role="row" href="https://github.com/Tripswarlock/sign-everything" target="_blank" rel="noopener">
+        <span class="repo-row__name" role="cell"><b>sign-everything</b><small>Python GUI</small></span>
+        <span class="repo-row__desc" role="cell">Массовое подписание файлов через cryptcp</span>
+        <span class="repo-row__stack" role="cell">Python · PyQt5</span>
+        <span class="repo-row__lic" role="cell">MIT</span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--open">public</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================= PRINCIPLES ======================= -->
+  <section class="section wrap" id="principles">
+    <header class="section__head">
+      <div>
+        <p class="kicker">Принципы</p>
+        <h2>Документы остаются у вас</h2>
+      </div>
+    </header>
+
+    <div class="principles">
+      <article class="principle reveal">
+        <div class="principle__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="10.5" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="15.2" r="1.4" fill="currentColor"/></svg>
+        </div>
+        <h3>Локальная обработка</h3>
+        <p>Ни PDF, ни подписи, ни сертификаты не отправляются на сервер. У веб-версии нет бэкенда, у настольной — сетевых запросов.</p>
+      </article>
+
+      <article class="principle reveal">
+        <div class="principle__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 20 6.5v5.9c0 4.5-3.4 7.7-8 9-4.6-1.3-8-4.5-8-9V6.5L12 3Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.7 12.2 2.3 2.3 4.4-4.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>КриптоПро, а не самодельная криптография</h3>
+        <p>Подпись и проверка выполняются штатным CSP и его утилитами. PIN и закрытые ключи не сохраняются и не покидают токен.</p>
+      </article>
+
+      <article class="principle reveal">
+        <div class="principle__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.6 5.5l-3.2 13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Проверяемый результат</h3>
+        <p>Открытый код, тесты на реальных сертификатах и отчёты без персональных данных. Ограничения описаны честно, а не спрятаны.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= CTA ======================= -->
+  <section class="cta wrap">
+    <div class="cta__inner">
+      <div>
+        <h2>Нужен инструмент под вашу задачу?</h2>
+        <p>Подпись, штамп, проверка или пакетная обработка — напишите, обсудим.</p>
+      </div>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href="https://github.com/Tripswarlock" target="_blank" rel="noopener">GitHub автора</a>
+        <a class="btn btn--soft" href="#donate">Поддержать</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <span class="brand__mark brand__mark--sm" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <path d="M16 3.5 27 8v8.2c0 6.2-4.6 10.6-11 12.3C9.6 26.8 5 22.4 5 16.2V8l11-4.5Z" stroke="currentColor" stroke-width="2"/>
+          <path d="m11 16.4 3.4 3.4 6.8-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <p>Инструменты электронной подписи. Сделано для тех, кто работает с документами каждый день.</p>
+    </div>
+    <nav class="footer__links" aria-label="Ссылки в подвале">
+      <a href="#projects">Проекты</a>
+      <a href="#repositories">Репозитории</a>
+      <a href="#donate">Донат</a>
+      <a href="https://github.com/Tripswarlock" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <p class="footer__copy">© <span id="year">2026</span> Tripswarlock · Дмитрий Петровский</p>
+  </div>
+</footer>
+
+<!-- QR dialog -->
+<dialog class="qr-dialog" id="qrDialog" aria-label="QR-код для доната">
+  <button class="qr-dialog__close" type="button" id="qrClose" aria-label="Закрыть">×</button>
+  <img src="assets/donate-qr.png" alt="QR-код для доната через Ozon Банк" width="600" height="600">
+  <p>Ozon Банк · наведите камеру</p>
+</dialog>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

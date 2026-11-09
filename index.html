@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light">
+<html lang="ru" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Офисные приложения — каталог Tripswarlock</title>
-<meta name="description" content="Каталог настольных приложений для офиса: журнал заявок, штамп и подпись PDF, запись окна, VPN-рассылка и сетевые карточные игры. Windows и Linux, локальные данные.">
-<meta property="og:title" content="Офисные приложения — каталог Tripswarlock">
-<meta property="og:description" content="Журнал заявок, документы и подпись, запись окна, рассылки и карточные игры. Настольные приложения для Windows и Linux.">
+<title>Офисные приложения — проекты Tripswarlock</title>
+<meta name="description" content="Журнал заявок, штамп и подпись PDF, запись окна, VPN-рассылка и сетевые карточные игры. Настольные приложения для Windows и Linux, всё локально.">
+<meta property="og:title" content="Офисные приложения — проекты Tripswarlock">
+<meta property="og:description" content="Журнал заявок, документы и подпись, запись окна, рассылки и карточные игры. Windows и Linux.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#f2ede3">
+<meta name="theme-color" content="#070b14">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/styles.css">
 <script>
@@ -16,7 +16,7 @@
     document.documentElement.classList.add('js');
     try {
       var t = localStorage.getItem('theme');
-      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
     } catch (e) {}
   })();
 </script>
@@ -25,7 +25,8 @@
 <a class="skip-link" href="#apps">Перейти к приложениям</a>
 
 <div class="bg" aria-hidden="true">
-  <div class="bg__wash"></div>
+  <div class="bg__glow bg__glow--1"></div>
+  <div class="bg__glow bg__glow--2"></div>
   <div class="bg__grid"></div>
 </div>
 
@@ -51,7 +52,7 @@
       <a href="#apps">Приложения</a>
       <a href="#journal">Журнал</a>
       <a href="#games">Игры</a>
-      <a href="#donate">Донат</a>
+      <a href="#repositories">Репозитории</a>
     </nav>
 
     <div class="topbar__actions">
@@ -70,9 +71,12 @@
 <main id="top">
   <!-- ======================= HERO ======================= -->
   <section class="hero wrap">
-    <div class="hero__main">
-      <p class="eyebrow"><span class="eyebrow__line"></span>Каталог офисных приложений</p>
-      <h1>Документы, заявки<br>и <em>колода</em><br>на перерыв.</h1>
+    <div class="hero__copy">
+      <p class="eyebrow">
+        <span class="eyebrow__dot"></span>
+        Офисные приложения · Windows и Linux
+      </p>
+      <h1>Документы, заявки<br>и <span class="accent">колода</span><br>на перерыв.</h1>
       <p class="lead">
         Подпись PDF, журнал заявок, запись окна, рассылка ключей и две карточные игры.
         Настольные приложения для Windows и Linux — без облака, подписок и телеметрии.
@@ -80,25 +84,28 @@
 
       <div class="hero__cta">
         <a class="btn btn--primary" href="#apps">
-          Смотреть каталог
+          Смотреть приложения
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5.5-5.5L19 12l-5.5 5.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a class="btn btn--soft" href="#repositories">Все репозитории</a>
+        <a class="btn btn--soft" href="#donate">Поддержать проект</a>
       </div>
 
-      <ul class="hero__facts">
-        <li><b>7</b> приложений</li>
-        <li><b>2</b> платформы</li>
-        <li><b>0</b> облака</li>
+      <ul class="hero__points">
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Windows и Linux</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Без телеметрии</li>
+        <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Открытый код</li>
       </ul>
     </div>
 
-    <!-- Donation ticket -->
+    <!-- Donation QR -->
     <aside class="donate" id="donate" aria-labelledby="donate-title">
-      <div class="donate__head">
-        <span class="donate__label">Поддержать проект</span>
-        <span class="donate__stamp">донат</span>
+      <div class="donate__badge">
+        <span class="donate__pulse" aria-hidden="true"></span>
+        Донат
       </div>
+      <h2 class="donate__title" id="donate-title">Поддержать разработку</h2>
+      <p class="donate__text">Сборки под Linux, тесты с реальным железом и новые приложения.</p>
+
       <button class="qr" type="button" id="qrOpen" aria-label="Открыть QR-код крупнее">
         <img src="assets/donate-qr.png" alt="QR-код для доната через Ozon Банк" width="600" height="600">
         <span class="qr__hint">
@@ -106,317 +113,251 @@
           Увеличить
         </span>
       </button>
-      <p class="donate__title" id="donate-title">Ozon Банк</p>
-      <p class="donate__note">Наведите камеру телефона — откроется перевод. Донаты идут на сборки под Linux и тесты с реальным железом.</p>
-      <span class="donate__perf" aria-hidden="true"></span>
+
+      <p class="donate__bank"><span class="donate__bank-dot"></span>Ozon Банк</p>
+      <p class="donate__note">Наведите камеру телефона на QR-код — откроется перевод.</p>
     </aside>
   </section>
 
-  <!-- ======================= TICKER ======================= -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker__track">
-      <span>Журнал заявок</span><i>✳</i><span>Штамп ЭП</span><i>✳</i><span>Запись окна</span><i>✳</i><span>VPN-рассылка</span><i>✳</i><span>Sign Everything</span><i>✳</i><span>Дурак</span><i>✳</i><span>Техасский холдем</span><i>✳</i>
-      <span>Журнал заявок</span><i>✳</i><span>Штамп ЭП</span><i>✳</i><span>Запись окна</span><i>✳</i><span>VPN-рассылка</span><i>✳</i><span>Sign Everything</span><i>✳</i><span>Дурак</span><i>✳</i><span>Техасский холдем</span><i>✳</i>
-    </div>
-  </div>
+  <!-- ======================= STATS ======================= -->
+  <section class="stats wrap" aria-label="Коротко о приложениях">
+    <div class="stat"><b>7</b><span>приложений</span></div>
+    <div class="stat"><b>4</b><span>категории</span></div>
+    <div class="stat"><b>2</b><span>платформы</span></div>
+    <div class="stat"><b>0</b><span>облака</span></div>
+  </section>
 
-  <!-- ======================= CATALOG ======================= -->
-  <section class="catalog wrap" id="apps">
-    <header class="section-head">
-      <span class="section-head__index">01</span>
-      <div class="section-head__text">
+  <!-- ======================= APPS ======================= -->
+  <section class="section wrap" id="apps">
+    <header class="section__head">
+      <div>
         <p class="kicker">Каталог</p>
         <h2>Семь приложений для рабочего дня</h2>
       </div>
-      <p class="section-head__note">От журнала заявок и подписи PDF до колоды на перерыв. Всё ставится локально.</p>
+      <p class="section__note">От журнала заявок и подписи PDF до колоды на перерыв.</p>
     </header>
 
-    <!-- Featured: JournalNext -->
-    <article class="feature" id="journal">
+    <!-- JournalNext featured -->
+    <article class="feature reveal" id="journal">
       <div class="feature__copy">
-        <div class="app__meta">
-          <span class="tag tag--green">Рабочий процесс</span>
-          <span class="repo">journalnext</span>
+        <div class="feature__meta">
+          <span class="pill pill--solid">Рабочий процесс</span>
+          <span class="card__repo">Tripswarlock / journalnext</span>
         </div>
         <h3>Журнал заявок <span>JournalNext</span></h3>
         <p class="feature__lead">
           Электронный журнал заявок: клиент подачи, оператор обработки и сервер на MySQL.
           Повторяет логику оригинальной программы 2006 года, но работает на современном стеке.
         </p>
-        <ul class="checks">
+        <ul class="features">
           <li>Клиент, оператор и сервер в одном репозитории</li>
           <li>WPF для Windows и Avalonia для Linux</li>
           <li>Демо-режим со встроенными данными</li>
           <li>MSI, .deb и tar.gz в релизах</li>
         </ul>
         <div class="tags"><span>C#</span><span>.NET</span><span>WPF</span><span>Avalonia</span><span>MySQL</span></div>
-        <div class="actions">
+        <div class="card__actions">
           <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/journalnext" target="_blank" rel="noopener">Репозиторий</a>
           <a class="btn btn--ghost btn--sm" href="https://github.com/Tripswarlock/journalnext/releases" target="_blank" rel="noopener">Релизы</a>
         </div>
       </div>
-      <div class="feature__shot">
-        <figure class="frame frame--feature">
-          <div class="frame__bar">
-            <span class="frame__dots"><i></i><i></i><i></i></span>
-            <span class="frame__name">Журнал заявок — подача</span>
-            <span class="frame__badge">WPF</span>
-          </div>
-          <img src="assets/journalnext.png" alt="JournalNext: форма подачи заявки" loading="lazy" width="1200" height="780">
-        </figure>
-        <p class="shot-caption">Клиент подачи заявки · демо-режим</p>
-      </div>
+      <figure class="feature__shot">
+        <img src="assets/journalnext.png" alt="JournalNext: форма подачи заявки" loading="lazy" width="1200" height="780">
+        <figcaption>Клиент подачи заявки · демо-режим</figcaption>
+      </figure>
     </article>
 
-    <!-- Documents -->
-    <div class="group">
-      <div class="group__head">
-        <h3>Документы и подпись</h3>
-        <span class="group__count">03</span>
-      </div>
+    <div class="grid" id="projectGrid">
 
-      <div class="grid grid--3">
-        <!-- Stamp EP -->
-        <article class="app">
-          <figure class="frame frame--card">
-            <div class="frame__bar">
-              <span class="frame__dots"><i></i><i></i><i></i></span>
-              <span class="frame__name">stamp-ep.exe</span>
-              <span class="frame__badge">Qt</span>
-            </div>
-            <img src="assets/stamp-ep.png" alt="Штамп ЭП: PDF и панель настройки штампа" loading="lazy" width="1380" height="860">
-          </figure>
-          <div class="app__body">
-            <div class="app__meta">
-              <span class="tag tag--blue">Документы</span>
-              <span class="vis vis--lock">private</span>
-            </div>
-            <h4>Штамп ЭП</h4>
-            <p>Нативное приложение на Qt: визуальный штамп, проверка CMS/PAdES и подпись PDF сертификатом CryptoPro CSP.</p>
-            <ul class="mini">
-              <li>Проверка ByteRange и покрытия PDF</li>
-              <li>Рукописный слой и пакетный экспорт</li>
-              <li>MSI, portable, .deb и .rpm</li>
-            </ul>
-            <div class="app__foot">
-              <div class="tags"><span>C++</span><span>Qt 6</span><span>MIT</span></div>
-              <a class="arrow" href="https://github.com/Tripswarlock/stamp-ep-sa" target="_blank" rel="noopener" aria-label="Репозиторий Штамп ЭП">
-                GitHub
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PDF stamp web -->
-        <article class="app">
-          <figure class="frame frame--card">
-            <div class="frame__bar">
-              <span class="frame__dots"><i></i><i></i><i></i></span>
-              <span class="frame__name">pdf-sign-stamp — браузер</span>
-              <span class="frame__badge">JS</span>
-            </div>
-            <img src="assets/pdf-sign-stamp.jpg" alt="Веб-утилита: PDF со штампом электронной подписи" loading="lazy" width="1600" height="1111">
-          </figure>
-          <div class="app__body">
-            <div class="app__meta">
-              <span class="tag tag--blue">Документы</span>
-              <span class="vis vis--lock">private</span>
-            </div>
-            <h4>Штамп ЭП — веб</h4>
-            <p>Браузерная утилита: штамп «Документ подписан электронной подписью», разбор .sig и сверка хэша по ГОСТ Р 34.11-2012.</p>
-            <ul class="mini">
-              <li>PDF и подпись не покидают браузер</li>
-              <li>Массовая загрузка пар и экспорт в ZIP</li>
-              <li>Сертификат с токена через КриптоПро</li>
-            </ul>
-            <div class="app__foot">
-              <div class="tags"><span>JavaScript</span><span>Canvas</span><span>GPL-3.0</span></div>
-              <a class="arrow" href="https://github.com/Tripswarlock/pdf-sign-stamp" target="_blank" rel="noopener" aria-label="Репозиторий Штамп ЭП — веб">
-                GitHub
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Sign Everything -->
-        <article class="app">
-          <figure class="frame frame--card frame--code">
-            <div class="frame__bar frame__bar--dark">
-              <span class="frame__dots"><i></i><i></i><i></i></span>
-              <span class="frame__name">sign-everything</span>
-              <span class="frame__badge">Python</span>
-            </div>
-            <div class="code">
-<pre><code><span class="c-com"># массовое подписание через cryptcp</span>
-<span class="c-kw">for</span> file <span class="c-kw">in</span> walk(folder):
-    <span class="c-kw">if</span> is_signed(file):
-        <span class="c-kw">continue</span>
-    cryptcp(<span class="c-str">"-s"</span>, cert, file)
-    progress += <span class="c-num">1</span></code></pre>
-            </div>
-          </figure>
-          <div class="app__body">
-            <div class="app__meta">
-              <span class="tag tag--blue">Документы</span>
-              <span class="vis vis--open">public</span>
-            </div>
-            <h4>Sign Everything</h4>
-            <p>Python-приложение для массового подписания файлов утилитой cryptcp: папка, сертификат, прогресс и отсоединённые .sig.</p>
-            <ul class="mini">
-              <li>Рекурсивный обход вложенных папок</li>
-              <li>Пропускает уже подписанные файлы</li>
-              <li>Любые форматы файлов</li>
-            </ul>
-            <div class="app__foot">
-              <div class="tags"><span>Python</span><span>PyQt5</span><span>MIT</span></div>
-              <a class="arrow" href="https://github.com/Tripswarlock/sign-everything" target="_blank" rel="noopener" aria-label="Репозиторий Sign Everything">
-                GitHub
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <!-- Utilities -->
-    <div class="group">
-      <div class="group__head">
-        <h3>Утилиты</h3>
-        <span class="group__count">02</span>
-      </div>
-
-      <div class="grid grid--2">
-        <!-- Window recorder -->
-        <article class="app app--wide">
-          <figure class="frame frame--card frame--contain">
-            <div class="frame__bar">
-              <span class="frame__dots"><i></i><i></i><i></i></span>
-              <span class="frame__name">WindowRecorder.exe</span>
-              <span class="frame__badge">C#</span>
-            </div>
-            <img src="assets/window-recorder.png" alt="Запись окна: выбор окна, кодеки и таймер" loading="lazy" width="762" height="760">
-          </figure>
-          <div class="app__body">
-            <div class="app__meta">
-              <span class="tag tag--amber">Утилиты</span>
-              <span class="vis vis--lock">private</span>
-            </div>
-            <h4>Запись окна</h4>
-            <p>Портативная утилита для Windows: записывает выбранное окно в MP4 с системным звуком, микрофоном и таймером остановки.</p>
-            <ul class="mini">
-              <li>Встроенные FFmpeg H.264/HEVC и AAC</li>
-              <li>Системный звук и микрофон одной дорожкой</li>
-              <li>Трей, горячая клавиша F9, таймер</li>
-            </ul>
-            <div class="app__foot">
-              <div class="tags"><span>C#</span><span>.NET</span><span>FFmpeg</span><span>Windows</span></div>
-              <a class="arrow" href="https://github.com/Tripswarlock/window-recorder" target="_blank" rel="noopener" aria-label="Репозиторий Запись окна">
-                GitHub
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- VPN mailer -->
-        <article class="app app--wide">
-          <figure class="frame frame--card">
-            <div class="frame__bar">
-              <span class="frame__dots"><i></i><i></i><i></i></span>
-              <span class="frame__name">VPN-рассылка.exe</span>
-              <span class="frame__badge">tkinter</span>
-            </div>
-            <img src="assets/vpn-mailer.png" alt="VPN-рассылка: таблица получателей и ключей (ключи скрыты)" loading="lazy" width="1493" height="997">
-          </figure>
-          <div class="app__body">
-            <div class="app__meta">
-              <span class="tag tag--amber">Утилиты</span>
-              <span class="vis vis--lock">private</span>
-            </div>
-            <h4>VPN-рассылка</h4>
-            <p>Windows-приложение для отправки ключей vpn://: таблица «ник — ключ — почта», настройки SMTP и отправка в один клик.</p>
-            <ul class="mini">
-              <li>Шаблоны писем и вложение .txt</li>
-              <li>Пароль SMTP шифруется через DPAPI</li>
-              <li>Импорт ключей из vpn.txt</li>
-            </ul>
-            <div class="app__foot">
-              <div class="tags"><span>Python</span><span>SMTP</span><span>Windows</span></div>
-              <a class="arrow" href="https://github.com/Tripswarlock/vpn-mailer" target="_blank" rel="noopener" aria-label="Репозиторий VPN-рассылка">
-                GitHub
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <!-- Games -->
-    <div class="group" id="games">
-      <div class="group__head">
-        <h3>Перерыв</h3>
-        <span class="group__count">01</span>
-      </div>
-
-      <article class="game">
-        <div class="game__copy">
-          <div class="app__meta">
-            <span class="tag tag--red">Игры</span>
-            <span class="repo">card-games</span>
-            <span class="vis vis--lock">private</span>
-          </div>
-          <h3>Дурак и техасский холдем</h3>
-          <p>
-            Две сетевые карточные игры в духе классических игр Windows. Один игрок создаёт стол,
-            остальные подключаются по IP — без серверов, аккаунтов и интернета.
-          </p>
-          <ul class="checks checks--tight">
-            <li>Покер: 2–10 игроков, блайнды, all-in, побочные банки</li>
-            <li>Дурак: 2–6 игроков, колода 36 или 52 карты</li>
-            <li>Чат, история раздачи, таймер хода и звук</li>
-            <li>Windows и Linux, готовые сборки в релизах</li>
-          </ul>
-          <div class="tags"><span>Python</span><span>Tkinter</span><span>TCP/IP</span><span>Windows / Linux</span></div>
-          <div class="actions">
-            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/card-games/releases/latest" target="_blank" rel="noopener">Скачать игры</a>
-            <a class="btn btn--ghost btn--sm" href="https://github.com/Tripswarlock/card-games" target="_blank" rel="noopener">Репозиторий</a>
+      <!-- Stamp EP -->
+      <article class="card reveal" data-cat="desktop">
+        <div class="card__shot">
+          <img src="assets/stamp-ep.png" alt="Штамп ЭП: PDF и панель настройки штампа" loading="lazy" width="1380" height="860">
+          <div class="card__badges">
+            <span class="pill pill--solid">Документы</span>
+            <span class="pill pill--lock">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8"/></svg>
+              private
+            </span>
           </div>
         </div>
-        <div class="game__shots">
-          <figure class="frame frame--game">
-            <div class="frame__bar">
-              <span class="frame__dots"><i></i><i></i><i></i></span>
-              <span class="frame__name">POKER.exe</span>
-              <span class="frame__badge">холдем</span>
-            </div>
-            <img src="assets/card-poker.png" alt="Техасский холдем: стол на четыре игрока" loading="lazy" width="1418" height="992">
-          </figure>
-          <figure class="frame frame--game">
-            <div class="frame__bar">
-              <span class="frame__dots"><i></i><i></i><i></i></span>
-              <span class="frame__name">DURAK.exe</span>
-              <span class="frame__badge">дурак</span>
-            </div>
-            <img src="assets/card-durak.png" alt="Подкидной дурак: игровой стол" loading="lazy" width="1418" height="992">
-          </figure>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / stamp-ep</div>
+          <h3>Штамп ЭП</h3>
+          <p>Нативное приложение на Qt: визуальный штамп, проверка CMS/PAdES и подпись PDF сертификатом CryptoPro CSP.</p>
+          <ul class="features">
+            <li>Проверка ByteRange и покрытия PDF</li>
+            <li>Рукописный слой и пакетный экспорт</li>
+            <li>MSI, portable, .deb и .rpm</li>
+          </ul>
+          <div class="tags"><span>C++</span><span>Qt 6</span><span>CryptoPro</span><span>MIT</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/stamp-ep-sa" target="_blank" rel="noopener">Репозиторий</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/Tripswarlock/stamp-ep-sa/releases" target="_blank" rel="noopener">Релизы</a>
+          </div>
         </div>
       </article>
+
+      <!-- PDF stamp web -->
+      <article class="card reveal" data-cat="web">
+        <div class="card__shot">
+          <img src="assets/pdf-sign-stamp.jpg" alt="Веб-утилита: PDF со штампом электронной подписи" loading="lazy" width="1600" height="1111">
+          <div class="card__badges">
+            <span class="pill pill--solid">Документы</span>
+            <span class="pill pill--lock">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8"/></svg>
+              private
+            </span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / pdf-sign-stamp</div>
+          <h3>Штамп ЭП — веб</h3>
+          <p>Браузерная утилита: штамп «Документ подписан электронной подписью», разбор .sig и сверка хэша по ГОСТ Р 34.11-2012.</p>
+          <ul class="features">
+            <li>PDF и подпись не покидают браузер</li>
+            <li>Массовая загрузка пар и экспорт в ZIP</li>
+            <li>Сертификат с токена через КриптоПро</li>
+          </ul>
+          <div class="tags"><span>JavaScript</span><span>Canvas</span><span>pdf.js</span><span>GPL-3.0</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/pdf-sign-stamp" target="_blank" rel="noopener">Репозиторий</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sign Everything -->
+      <article class="card reveal" data-cat="script">
+        <div class="card__shot card__shot--code">
+          <div class="code">
+            <div class="code__bar"><i></i><i></i><i></i><span>sign-everything</span></div>
+<pre><code><span class="c-com"># массовое подписание через cryptcp</span>
+<span class="c-kw">for</span> file <span class="c-kw">in</span> walk(folder):
+    <span class="c-kw">if</span> is_signed(file): <span class="c-kw">continue</span>
+    cryptcp(<span class="c-str">"-s"</span>, cert, file)
+    progress += <span class="c-num">1</span></code></pre>
+          </div>
+          <div class="card__badges">
+            <span class="pill pill--solid">Документы</span>
+            <span class="pill pill--open">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              public
+            </span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / sign-everything</div>
+          <h3>Sign Everything</h3>
+          <p>Python-приложение для массового подписания файлов утилитой cryptcp: папка, сертификат, прогресс и отсоединённые .sig.</p>
+          <ul class="features">
+            <li>Рекурсивный обход вложенных папок</li>
+            <li>Пропускает уже подписанные файлы</li>
+            <li>Любые форматы файлов</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>PyQt5</span><span>cryptcp</span><span>MIT</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/sign-everything" target="_blank" rel="noopener">Репозиторий</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Window recorder -->
+      <article class="card reveal" data-cat="desktop">
+        <div class="card__shot card__shot--contain">
+          <img src="assets/window-recorder.png" alt="Запись окна: выбор окна, кодеки и таймер" loading="lazy" width="762" height="760">
+          <div class="card__badges">
+            <span class="pill pill--solid">Утилиты</span>
+            <span class="pill pill--lock">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8"/></svg>
+              private
+            </span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / window-recorder</div>
+          <h3>Запись окна</h3>
+          <p>Портативная утилита для Windows: записывает выбранное окно в MP4 с системным звуком, микрофоном и таймером остановки.</p>
+          <ul class="features">
+            <li>Встроенные FFmpeg H.264/HEVC и AAC</li>
+            <li>Системный звук и микрофон одной дорожкой</li>
+            <li>Трей, горячая клавиша F9, таймер</li>
+          </ul>
+          <div class="tags"><span>C#</span><span>.NET</span><span>FFmpeg</span><span>Windows</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/window-recorder" target="_blank" rel="noopener">Репозиторий</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/Tripswarlock/window-recorder/releases" target="_blank" rel="noopener">Скачать</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- VPN mailer -->
+      <article class="card reveal" data-cat="desktop">
+        <div class="card__shot">
+          <img src="assets/vpn-mailer.png" alt="VPN-рассылка: таблица получателей и ключей (ключи скрыты)" loading="lazy" width="1493" height="997">
+          <div class="card__badges">
+            <span class="pill pill--solid">Утилиты</span>
+            <span class="pill pill--lock">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8"/></svg>
+              private
+            </span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / vpn-mailer</div>
+          <h3>VPN-рассылка</h3>
+          <p>Windows-приложение для отправки ключей vpn://: таблица «ник — ключ — почта», настройки SMTP и отправка в один клик.</p>
+          <ul class="features">
+            <li>Шаблоны писем и вложение .txt</li>
+            <li>Пароль SMTP шифруется через DPAPI</li>
+            <li>Импорт ключей из vpn.txt</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>tkinter</span><span>SMTP</span><span>Windows</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/vpn-mailer" target="_blank" rel="noopener">Репозиторий</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card games -->
+      <article class="card reveal" data-cat="games" id="games">
+        <div class="card__shot">
+          <img src="assets/card-poker.png" alt="Техасский холдем: игровой стол" loading="lazy" width="1418" height="992">
+          <div class="card__badges">
+            <span class="pill pill--solid">Игры</span>
+            <span class="pill pill--lock">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8"/></svg>
+              private
+            </span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__repo">Tripswarlock / card-games</div>
+          <h3>Дурак и холдем</h3>
+          <p>Две сетевые карточные игры в духе классических игр Windows: один игрок создаёт стол, остальные подключаются по IP.</p>
+          <ul class="features">
+            <li>Покер: 2–10 игроков, блайнды, all-in</li>
+            <li>Дурак: 2–6 игроков, колода 36 или 52</li>
+            <li>Чат, история раздачи, таймер хода</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>Tkinter</span><span>TCP/IP</span><span>Windows / Linux</span></div>
+          <div class="card__actions">
+            <a class="btn btn--primary btn--sm" href="https://github.com/Tripswarlock/card-games/releases/latest" target="_blank" rel="noopener">Скачать игры</a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/Tripswarlock/card-games" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
   <!-- ======================= REPOSITORIES ======================= -->
   <section class="section wrap" id="repositories">
-    <header class="section-head">
-      <span class="section-head__index">02</span>
-      <div class="section-head__text">
+    <header class="section__head">
+      <div>
         <p class="kicker">Оглавление</p>
         <h2>Все приложения и репозитории</h2>
       </div>
-      <p class="section-head__note">Часть репозиториев приватна — доступ по запросу владельцу.</p>
+      <p class="section__note">Часть репозиториев приватна — доступ по запросу владельцу.</p>
     </header>
 
     <div class="repo-table" role="table" aria-label="Приложения и связанные репозитории">
@@ -433,7 +374,7 @@
         <span class="repo-row__desc" role="cell">Клиент, оператор и сервер заявок на MySQL</span>
         <span class="repo-row__stack" role="cell">Windows / Linux</span>
         <span class="repo-row__lic" role="cell">MIT</span>
-        <span class="repo-row__vis" role="cell"><span class="vis vis--lock">private</span></span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
       </a>
 
       <a class="repo-row" role="row" href="https://github.com/Tripswarlock/stamp-ep-sa" target="_blank" rel="noopener">
@@ -441,7 +382,7 @@
         <span class="repo-row__desc" role="cell">Штамп, проверка и подпись PDF через CryptoPro</span>
         <span class="repo-row__stack" role="cell">Windows / Linux</span>
         <span class="repo-row__lic" role="cell">MIT</span>
-        <span class="repo-row__vis" role="cell"><span class="vis vis--lock">private</span></span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
       </a>
 
       <a class="repo-row" role="row" href="https://github.com/Tripswarlock/pdf-sign-stamp" target="_blank" rel="noopener">
@@ -449,7 +390,7 @@
         <span class="repo-row__desc" role="cell">Штамп и проверка подписи PDF в браузере</span>
         <span class="repo-row__stack" role="cell">Браузер</span>
         <span class="repo-row__lic" role="cell">GPL-3.0</span>
-        <span class="repo-row__vis" role="cell"><span class="vis vis--lock">private</span></span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
       </a>
 
       <a class="repo-row" role="row" href="https://github.com/Tripswarlock/sign-everything" target="_blank" rel="noopener">
@@ -457,7 +398,7 @@
         <span class="repo-row__desc" role="cell">Массовое подписание файлов через cryptcp</span>
         <span class="repo-row__stack" role="cell">Windows</span>
         <span class="repo-row__lic" role="cell">MIT</span>
-        <span class="repo-row__vis" role="cell"><span class="vis vis--open">public</span></span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--open">public</span></span>
       </a>
 
       <a class="repo-row" role="row" href="https://github.com/Tripswarlock/window-recorder" target="_blank" rel="noopener">
@@ -465,7 +406,7 @@
         <span class="repo-row__desc" role="cell">Запись выбранного окна в MP4 со звуком</span>
         <span class="repo-row__stack" role="cell">Windows</span>
         <span class="repo-row__lic" role="cell">—</span>
-        <span class="repo-row__vis" role="cell"><span class="vis vis--lock">private</span></span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
       </a>
 
       <a class="repo-row" role="row" href="https://github.com/Tripswarlock/vpn-mailer" target="_blank" rel="noopener">
@@ -473,7 +414,7 @@
         <span class="repo-row__desc" role="cell">Отправка ключей vpn:// получателям по SMTP</span>
         <span class="repo-row__stack" role="cell">Windows</span>
         <span class="repo-row__lic" role="cell">—</span>
-        <span class="repo-row__vis" role="cell"><span class="vis vis--lock">private</span></span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
       </a>
 
       <a class="repo-row" role="row" href="https://github.com/Tripswarlock/card-games" target="_blank" rel="noopener">
@@ -481,52 +422,8 @@
         <span class="repo-row__desc" role="cell">Сетевые дурак и техасский холдем</span>
         <span class="repo-row__stack" role="cell">Windows / Linux</span>
         <span class="repo-row__lic" role="cell">—</span>
-        <span class="repo-row__vis" role="cell"><span class="vis vis--lock">private</span></span>
+        <span class="repo-row__vis" role="cell"><span class="pill pill--lock">private</span></span>
       </a>
-    </div>
-  </section>
-
-  <!-- ======================= PRINCIPLES ======================= -->
-  <section class="section wrap" id="principles">
-    <header class="section-head">
-      <span class="section-head__index">03</span>
-      <div class="section-head__text">
-        <p class="kicker">Подход</p>
-        <h2>Офис без облака</h2>
-      </div>
-    </header>
-
-    <div class="principles">
-      <article class="principle">
-        <span class="principle__num">01</span>
-        <h3>Данные на машине</h3>
-        <p>Документы, заявки и ключи не уходят на чужие серверы. У программ нет телеметрии и обязательных аккаунтов.</p>
-      </article>
-      <article class="principle">
-        <span class="principle__num">02</span>
-        <h3>Windows и Linux</h3>
-        <p>Qt, Avalonia, .NET и Python позволяют собирать один и тот же инструмент под обе системы — без виртуалок.</p>
-      </article>
-      <article class="principle">
-        <span class="principle__num">03</span>
-        <h3>Открытый код</h3>
-        <p>MIT и GPL, установщики в релизах, честно описанные ограничения. Можно собрать самому и проверить.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- ======================= CTA ======================= -->
-  <section class="cta wrap">
-    <div class="cta__inner">
-      <div>
-        <p class="kicker">Связь</p>
-        <h2>Нужно приложение под задачу?</h2>
-        <p>Журнал, документы, запись или игра — напишите, обсудим.</p>
-      </div>
-      <div class="cta__actions">
-        <a class="btn btn--primary" href="https://github.com/Tripswarlock" target="_blank" rel="noopener">GitHub автора</a>
-        <a class="btn btn--soft" href="#donate">Поддержать</a>
-      </div>
     </div>
   </section>
 </main>

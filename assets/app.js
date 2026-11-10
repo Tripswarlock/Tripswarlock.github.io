@@ -5,47 +5,33 @@
 
   /* ---------- theme ---------- */
   var toggle = document.getElementById('themeToggle');
+  var meta = document.querySelector('meta[name="theme-color"]');
+
+  function syncThemeUi() {
+    var light = root.dataset.theme !== 'dark';
+    if (meta) meta.setAttribute('content', light ? '#FEF7FF' : '#141218');
+    if (toggle) toggle.setAttribute('aria-label', light ? 'Включить тёмную тему' : 'Включить светлую тему');
+  }
+  syncThemeUi();
+
   if (toggle) {
     toggle.addEventListener('click', function () {
-      var next = root.dataset.theme === 'light' ? 'dark' : 'light';
+      var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
       root.dataset.theme = next;
       try { localStorage.setItem('theme', next); } catch (e) {}
-      var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', next === 'light' ? '#f5f7fb' : '#070b14');
-      toggle.setAttribute('aria-label', next === 'light' ? 'Включить тёмную тему' : 'Включить светлую тему');
+      syncThemeUi();
     });
   }
 
-  /* ---------- sticky topbar border ---------- */
+  /* ---------- sticky top app bar ---------- */
   var topbar = document.querySelector('.topbar');
-  var onScroll = function () {
-    if (!topbar) return;
-    topbar.classList.toggle('is-scrolled', window.scrollY > 8);
-  };
+  function onScroll() {
+    if (topbar) topbar.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------- project filters ---------- */
-  var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
-  var cards = Array.prototype.slice.call(document.querySelectorAll('#projectGrid .card'));
-
-  filters.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var value = btn.dataset.filter;
-      filters.forEach(function (b) {
-        b.classList.toggle('is-active', b === btn);
-        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-      });
-      cards.forEach(function (card) {
-        var show = value === 'all' || card.dataset.cat === value;
-        card.hidden = !show;
-        if (show) card.classList.add('is-in');
-      });
-    });
-    btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
-  });
-
-  /* ---------- reveal on scroll ---------- */
+  /* ---------- reveal ---------- */
   var revealItems = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -55,11 +41,28 @@
           io.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
     revealItems.forEach(function (el) { io.observe(el); });
   } else {
     revealItems.forEach(function (el) { el.classList.add('is-in'); });
   }
+
+  /* ---------- material ripple ---------- */
+  var rippleTargets = document.querySelectorAll('.btn, .icon-btn, .nav a');
+  Array.prototype.forEach.call(rippleTargets, function (el) {
+    el.addEventListener('pointerdown', function (event) {
+      var rect = el.getBoundingClientRect();
+      var size = Math.max(rect.width, rect.height) * 2;
+      var ink = document.createElement('span');
+      ink.className = 'ripple';
+      ink.style.width = size + 'px';
+      ink.style.height = size + 'px';
+      ink.style.left = (event.clientX - rect.left - size / 2) + 'px';
+      ink.style.top = (event.clientY - rect.top - size / 2) + 'px';
+      el.appendChild(ink);
+      window.setTimeout(function () { ink.remove(); }, 600);
+    });
+  });
 
   /* ---------- QR dialog ---------- */
   var dialog = document.getElementById('qrDialog');

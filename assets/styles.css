@@ -33,11 +33,11 @@
   --elev3: 0 4px 8px 3px rgba(0, 0, 0, .15), 0 1px 3px rgba(0, 0, 0, .30);
   --elev4: 0 6px 10px 4px rgba(0, 0, 0, .15), 0 2px 3px rgba(0, 0, 0, .30);
 
-  --radius-xs: 8px;
-  --radius-s: 12px;
-  --radius-m: 16px;
-  --radius-l: 24px;
-  --radius-xl: 28px;
+  --radius-xs: 6px;
+  --radius-s: 8px;
+  --radius-m: 10px;
+  --radius-l: 12px;
+  --radius-xl: 12px;
   --max: 1200px;
 
   --font: "Roboto", "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;

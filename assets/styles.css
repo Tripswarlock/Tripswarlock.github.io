@@ -1029,3 +1029,14 @@ html[data-theme="light"] .footer__brand p { color: #5a5a5a; }
 html[data-theme="light"] .footer__links a { color: #333333; }
 html[data-theme="light"] .footer__links a:hover { background: #d2d2d2; color: #111111; }
 html[data-theme="light"] .footer__copy { color: #6a6a6a; }
+
+/* круглая светлая иконка T в шапке и подвале */
+.brand__mark {
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: none;
+  color: inherit;
+}
+.brand__mark svg { width: 40px; height: 40px; }
+.brand__mark--sm svg { width: 34px; height: 34px; }

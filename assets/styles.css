@@ -3,30 +3,33 @@
    ========================================================= */
 
 :root {
-  --primary: #6750a4;
+  --primary: #5e8c00;
   --on-primary: #ffffff;
-  --primary-container: #eaddff;
-  --on-primary-container: #21005d;
-  --secondary: #625b71;
+  --primary-container: #dde8c0;
+  --on-primary-container: #223300;
+  --secondary: #5a5a5a;
   --on-secondary: #ffffff;
-  --secondary-container: #e8def8;
-  --on-secondary-container: #1d192b;
-  --tertiary: #7d5260;
-  --tertiary-container: #ffd8e4;
-  --on-tertiary-container: #31111d;
+  --secondary-container: #d6d6d6;
+  --on-secondary-container: #1a1a1a;
+  --tertiary: #c75000;
+  --tertiary-container: #ffe0c2;
+  --on-tertiary-container: #3a1a00;
 
-  --surface: #fef7ff;
+  --surface: #ececec;
   --surface-container-lowest: #ffffff;
-  --surface-container-low: #f7f2fa;
-  --surface-container: #f3edf7;
-  --surface-container-high: #ece6f0;
-  --surface-container-highest: #e6e0e9;
-  --on-surface: #1d1b20;
-  --on-surface-variant: #49454f;
-  --outline: #79747e;
-  --outline-variant: #cac4d0;
-  --inverse-surface: #322f35;
-  --inverse-on-surface: #f5eff7;
+  --surface-container-low: #f7f7f7;
+  --surface-container: #e2e2e2;
+  --surface-container-high: #d6d6d6;
+  --surface-container-highest: #c9c9c9;
+  --on-surface: #141414;
+  --on-surface-variant: #4a4a4a;
+  --outline: #7a7a7a;
+  --outline-variant: #c2c2c2;
+  --inverse-surface: #2b2b2b;
+  --inverse-on-surface: #f2f2f2;
+
+  --card-grad: linear-gradient(180deg, #ffffff, #ededed);
+  --stat-grad: linear-gradient(180deg, #ffffff, #e6e6e6);
 
   --elev1: 0 1px 2px rgba(0, 0, 0, .30), 0 1px 3px 1px rgba(0, 0, 0, .15);
   --elev2: 0 1px 2px rgba(0, 0, 0, .30), 0 2px 6px 2px rgba(0, 0, 0, .15);
@@ -45,30 +48,33 @@
 }
 
 html[data-theme="dark"] {
-  --primary: #d0bcff;
-  --on-primary: #381e72;
-  --primary-container: #4f378b;
-  --on-primary-container: #eaddff;
-  --secondary: #ccc2dc;
-  --on-secondary: #332d41;
-  --secondary-container: #4a4458;
-  --on-secondary-container: #e8def8;
-  --tertiary: #efb8c8;
-  --tertiary-container: #633b48;
-  --on-tertiary-container: #ffd8e4;
+  --primary: #99cc00;
+  --on-primary: #0b1400;
+  --primary-container: #2c3a12;
+  --on-primary-container: #d9eda8;
+  --secondary: #bdbdbd;
+  --on-secondary: #1a1a1a;
+  --secondary-container: #333333;
+  --on-secondary-container: #ededed;
+  --tertiary: #ff8a00;
+  --tertiary-container: #4a2a00;
+  --on-tertiary-container: #ffd9a8;
 
-  --surface: #141218;
-  --surface-container-lowest: #0f0d13;
-  --surface-container-low: #1d1b20;
-  --surface-container: #211f26;
-  --surface-container-high: #2b2930;
-  --surface-container-highest: #36343b;
-  --on-surface: #e6e0e9;
-  --on-surface-variant: #cac4d0;
-  --outline: #938f99;
-  --outline-variant: #49454f;
-  --inverse-surface: #e6e0e9;
-  --inverse-on-surface: #322f35;
+  --surface: #000000;
+  --surface-container-lowest: #050505;
+  --surface-container-low: #1a1a1a;
+  --surface-container: #222222;
+  --surface-container-high: #2c2c2c;
+  --surface-container-highest: #383838;
+  --on-surface: #f2f2f2;
+  --on-surface-variant: #bdbdbd;
+  --outline: #5a5a5a;
+  --outline-variant: #3a3a3a;
+  --inverse-surface: #f2f2f2;
+  --inverse-on-surface: #1a1a1a;
+
+  --card-grad: linear-gradient(180deg, #2b2b2b, #1b1b1b);
+  --stat-grad: linear-gradient(180deg, #2a2a2a, #191919);
 }
 
 * { box-sizing: border-box; }
@@ -585,7 +591,7 @@ html[data-theme="light"] .icon-moon { display: none; }
 .code pre { margin: 0; padding: 14px 16px; overflow: hidden; }
 .code code { font-family: var(--mono); font-size: 11px; line-height: 1.8; color: #e6e0e9; }
 .c-com { color: #938f99; }
-.c-kw { color: #d0bcff; }
+.c-kw { color: #b6e04a; }
 .c-str { color: #a6e3c0; }
 .c-num { color: #f7d78a; }
 
@@ -789,3 +795,165 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
   color: var(--primary);
   background: color-mix(in srgb, var(--primary) 14%, transparent);
 }
+
+/* =========================================================
+   Палитра в духе Android 2.3.6 (Gingerbread)
+   ========================================================= */
+
+.bg {
+  background:
+    radial-gradient(1000px 540px at 86% -10%, color-mix(in srgb, var(--primary) 18%, transparent), transparent 62%),
+    radial-gradient(700px 420px at -6% 16%, color-mix(in srgb, var(--tertiary) 8%, transparent), transparent 60%),
+    var(--surface);
+}
+
+/* тёмный статус-бар/заголовок как в Gingerbread — в обеих темах */
+.topbar {
+  background: linear-gradient(180deg, rgba(48, 48, 48, .97), rgba(17, 17, 17, .98));
+  border-bottom: 1px solid #000;
+}
+.topbar.is-scrolled {
+  background: #111111;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .6);
+}
+.brand__name { color: #f2f2f2; }
+.brand__sub { color: #9a9a9a; }
+.brand__mark {
+  background: #99cc00;
+  color: #0b1400;
+  border: 1px solid #b6e04a;
+  border-radius: 8px;
+}
+.nav a {
+  color: #c8c8c8;
+  border-radius: 4px;
+}
+.nav a:hover { color: #ffffff; background: rgba(255, 255, 255, .09); }
+.nav a:active { background: rgba(255, 255, 255, .14); }
+.icon-btn { color: #e0e0e0; border-radius: 6px; }
+.icon-btn:hover { color: #ffffff; background: rgba(255, 255, 255, .12); }
+
+.topbar .btn--ghost {
+  background: linear-gradient(180deg, #3e3e3e, #262626);
+  border: 1px solid #5a5a5a;
+  color: #f2f2f2;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12);
+}
+.topbar .btn--ghost:hover {
+  background: linear-gradient(180deg, #4a4a4a, #303030);
+}
+
+/* кнопки Gingerbread: зелёные и тёмно-серые, с малым радиусом */
+.btn {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+.btn--primary {
+  background: linear-gradient(180deg, #c2e84f, #8fbe00);
+  color: #0b1400;
+  border-color: #a8d22e;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 1px 2px rgba(0, 0, 0, .35);
+}
+.btn--primary:hover {
+  background: linear-gradient(180deg, #d0f063, #9bcc12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 2px 4px rgba(0, 0, 0, .35);
+}
+.btn--soft {
+  background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+  color: #f2f2f2;
+  border-color: #5e5e5e;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12);
+}
+.btn--soft:hover {
+  background: linear-gradient(180deg, #565656, #333333);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 2px 4px rgba(0, 0, 0, .3);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--outline);
+}
+.btn--ghost:hover { background: color-mix(in srgb, var(--primary) 12%, transparent); }
+.btn--sm { border-radius: 6px; }
+
+/* chips и бейджи — прямоугольнее */
+.eyebrow { border-radius: 4px; }
+.pill { border-radius: 4px; }
+.pill--solid { background: var(--primary); color: var(--on-primary); }
+.tags span { border-radius: 4px; }
+.donate__badge { border-radius: 4px; background: #99cc00; color: #0b1400; }
+.card__badges .pill--solid { background: var(--primary); color: var(--on-primary); }
+
+/* карточки и панели */
+.stat {
+  background: var(--stat-grad);
+  border: 1px solid var(--outline-variant);
+}
+.feature {
+  background: var(--card-grad);
+  border: 1px solid var(--outline-variant);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 6px 18px rgba(0, 0, 0, .18);
+}
+.card {
+  background: var(--card-grad);
+  border: 1px solid var(--outline-variant);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 4px 12px rgba(0, 0, 0, .18);
+}
+.card:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 10px 24px rgba(0, 0, 0, .28);
+}
+.repo-table {
+  background: var(--card-grad);
+  border: 1px solid var(--outline-variant);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 4px 12px rgba(0, 0, 0, .16);
+}
+.feature__shot img { border: 1px solid var(--outline-variant); }
+
+/* донат — тёмная Gingerbread-панель вместо розовой */
+.donate {
+  background: linear-gradient(180deg, #323232, #181818);
+  color: #f2f2f2;
+  border: 1px solid #444444;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 10px 26px rgba(0, 0, 0, .4);
+}
+.donate__title { color: #f2f2f2; }
+.donate__text { color: #c7c7c7; opacity: 1; }
+.donate__note { color: #9a9a9a; opacity: 1; }
+.donate__bank { color: #f2f2f2; }
+
+/* CTA — тоже тёмная панель с зелёным акцентом */
+.card--cta {
+  background: linear-gradient(180deg, #2f2f2f, #151515);
+  color: #f2f2f2;
+  border-color: #444444;
+}
+.card--cta .kicker { color: #99cc00; opacity: 1; }
+.card--cta h3 { color: #ffffff; }
+.card--cta p { color: #c7c7c7; opacity: 1; }
+.card--cta .btn {
+  background: linear-gradient(180deg, #c2e84f, #8fbe00);
+  color: #0b1400;
+  border: 1px solid #a8d22e;
+}
+.cta-card__icon {
+  background: rgba(153, 204, 0, .14);
+  color: #99cc00;
+}
+
+/* подвал — тёмный, как системная панель */
+.footer {
+  background: #111111;
+  border-top: 1px solid #2b2b2b;
+  color: #bdbdbd;
+}
+.footer__brand p { color: #9a9a9a; }
+.footer__links a { color: #c8c8c8; border-radius: 4px; }
+.footer__links a:hover { background: #262626; color: #ffffff; }
+.footer__copy { color: #7a7a7a; }
+
+/* код — зелёно-оранжевые акценты вместо фиолетовых */
+.c-kw { color: #b6e04a; }
+.c-str { color: #ffb74d; }
+.c-num { color: #ff8a00; }

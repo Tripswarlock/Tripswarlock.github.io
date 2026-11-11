@@ -9,7 +9,7 @@
 
   function syncThemeUi() {
     var light = root.dataset.theme !== 'dark';
-    if (meta) meta.setAttribute('content', light ? '#FEF7FF' : '#141218');
+    if (meta) meta.setAttribute('content', light ? '#ECECEC' : '#000000');
     if (toggle) toggle.setAttribute('aria-label', light ? 'Включить тёмную тему' : 'Включить светлую тему');
   }
   syncThemeUi();

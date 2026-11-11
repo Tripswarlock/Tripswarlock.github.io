@@ -1,8 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#111111"/>
-  <rect x="9" y="12" width="46" height="40" rx="5" fill="none" stroke="#99CC00" stroke-width="3.2"/>
-  <path d="M9 23h46M22 23v29" stroke="#99CC00" stroke-width="3.2"/>
-  <rect x="29" y="30" width="9" height="7" rx="1.5" fill="#99CC00"/>
-  <rect x="42" y="30" width="6" height="7" rx="1.5" fill="#99CC00"/>
-  <rect x="29" y="41" width="9" height="5" rx="1.5" fill="#99CC00"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b8e23a"/>
+      <stop offset="1" stop-color="#7fa800"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="29.5" fill="none" stroke="#0b1400" stroke-opacity=".18" stroke-width="1.4"/>
+  <path d="M18 17h28l-2 9h-7v23H27V26h-7z" fill="#0b1400"/>
+  <path d="M18.4 17H45.6l-.45 2H18.85z" fill="#ffffff" opacity=".22"/>
+  <path d="M32 32.5l3.5 3.5-3.5 3.5-3.5-3.5z" fill="#99cc00" opacity=".55"/>
 </svg>

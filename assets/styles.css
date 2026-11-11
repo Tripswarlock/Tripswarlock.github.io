@@ -957,3 +957,75 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 .c-kw { color: #b6e04a; }
 .c-str { color: #ffb74d; }
 .c-num { color: #ff8a00; }
+
+/* =========================================================
+   Светлая тема: светлый фон и панели, Android-зелёные акценты
+   ========================================================= */
+
+html[data-theme="light"] .topbar {
+  background: linear-gradient(180deg, #fafafa, #e4e4e4);
+  border-bottom: 1px solid #c8c8c8;
+}
+html[data-theme="light"] .topbar.is-scrolled {
+  background: #f2f2f2;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+html[data-theme="light"] .brand__name { color: #141414; }
+html[data-theme="light"] .brand__sub { color: #6a6a6a; }
+html[data-theme="light"] .nav a { color: #3a3a3a; }
+html[data-theme="light"] .nav a:hover { color: #111111; background: rgba(0, 0, 0, .07); }
+html[data-theme="light"] .icon-btn { color: #3a3a3a; }
+html[data-theme="light"] .icon-btn:hover { color: #111111; background: rgba(0, 0, 0, .08); }
+html[data-theme="light"] .topbar .btn--ghost {
+  background: linear-gradient(180deg, #ffffff, #dddddd);
+  border-color: #b8b8b8;
+  color: #1a1a1a;
+}
+html[data-theme="light"] .topbar .btn--ghost:hover {
+  background: linear-gradient(180deg, #ffffff, #d2d2d2);
+}
+
+html[data-theme="light"] .btn--soft {
+  background: linear-gradient(180deg, #f7f7f7, #d9d9d9);
+  border-color: #bdbdbd;
+  color: #1a1a1a;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8);
+}
+html[data-theme="light"] .btn--soft:hover {
+  background: linear-gradient(180deg, #ffffff, #cfcfcf);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 2px 4px rgba(0, 0, 0, .15);
+}
+
+html[data-theme="light"] .donate {
+  background: linear-gradient(180deg, #ffffff, #e6e6e6);
+  color: #141414;
+  border-color: #c8c8c8;
+  box-shadow: inset 0 1px 0 #ffffff, 0 8px 22px rgba(0, 0, 0, .15);
+}
+html[data-theme="light"] .donate__title { color: #141414; }
+html[data-theme="light"] .donate__text { color: #454545; }
+html[data-theme="light"] .donate__note { color: #6a6a6a; }
+html[data-theme="light"] .donate__bank { color: #141414; }
+
+html[data-theme="light"] .card--cta {
+  background: linear-gradient(180deg, #f6f9ec, #dde8c0);
+  color: #141414;
+  border-color: #c2d39a;
+}
+html[data-theme="light"] .card--cta .kicker { color: #4f7a00; }
+html[data-theme="light"] .card--cta h3 { color: #141414; }
+html[data-theme="light"] .card--cta p { color: #45502e; }
+html[data-theme="light"] .cta-card__icon {
+  background: rgba(94, 140, 0, .12);
+  color: #4f7a00;
+}
+
+html[data-theme="light"] .footer {
+  background: #e4e4e4;
+  border-top: 1px solid #c8c8c8;
+  color: #3a3a3a;
+}
+html[data-theme="light"] .footer__brand p { color: #5a5a5a; }
+html[data-theme="light"] .footer__links a { color: #333333; }
+html[data-theme="light"] .footer__links a:hover { background: #d2d2d2; color: #111111; }
+html[data-theme="light"] .footer__copy { color: #6a6a6a; }
